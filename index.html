@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tu Nombre - Portfolio</title>
+    <style>
+        body {
+    font-family:sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    
+}
+
+/**Menu de navegacion**/
+
+header {
+        background-color: #333;
+        padding: 20px;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        margin-right: 10px;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+   
+
+
+
+    .menu-hamburguesa {
+      display: none;
+    }
+
+    
+
+    .menu-hamburguesa ul {
+      display: none;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu-hamburguesa ul li {
+      margin-bottom: 10px;
+    }
+
+    .menu-hamburguesa ul li a:link {
+      color: white;
+      text-decoration: none;
+    }
+
+
+    a:hover{
+    color: rgb(164, 161, 161);
+    text-decoration: underline;
+}
+
+
+li:hover{
+    transform:scale(1.50); 
+    transition: 0.4s;
+    
+    
+}
+.menu-hamburguesa li:hover{
+    transform:none;
+    
+    
+}
+
+
+
+
+    /* Media query para cambiar al modo hamburguesa en una cierta resolución */
+    @media (max-width: 768px) {
+      header nav ul {
+        display: none; /* Oculta el menú normal */
+      }
+
+      .menu-hamburguesa {
+        display: block; /* Muestra el menú hamburguesa */
+      }
+
+      .menu-hamburguesa ul {
+        display: block;
+        text-align: center;
+      }
+
+      .menu-hamburguesa li:hover{
+        background-color: #000000;
+    transition: 1s;
+      }
+
+  }
+
+    /*Final del menu*/
+
+
+
+
+
+
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+section{
+        display: flex;
+        border: 1px solid rgb(255, 255, 255);
+        text-align: center;
+
+        
+        }
+        section:nth-child(odd) {
+            background-color: rgb(23, 23, 23);
+            color: white;
+            justify-content: center;
+            justify-content: space-around;
+            flex-direction: row-reverse;
+        }
+        
+        
+        section:nth-child(even) {
+        background-color: rgb(197, 132, 33);
+        justify-content: center;
+        justify-content: space-around;
+        }
+        section:nth-child(1) {
+          background-color: rgb(23, 23, 23);
+          height: 70vmin;
+          display: unset;
+        }
+
+        section:nth-child(2) {
+        background-color: rgb(197, 132, 33);
+        height: calc(100%);
+        display: unset;
+        }
+        section:nth-child(3) {
+          background-color: rgb(23, 23, 23);
+          height: calc(100%);
+          display: unset;
+        }
+        section:nth-child(4) {
+        background-color: rgb(197, 132, 33);
+        height: calc(100%);
+        display: unset;
+        }
+
+        section:nth-child(5) {
+          background-color: rgb(23, 23, 23);
+          height: calc(100%);
+        display: unset;
+        }
+
+        section:nth-child(6) {
+          background-color: rgb(197, 132, 33);
+          height: calc(100%);
+        display: unset;
+        }
+
+        section:nth-child(7) {
+          background-color: rgb(23, 23, 23);
+          height: calc(100%);
+        display: unset;
+        }
+
+/*HERO*/
+
+.info{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+
+
+
+
+
+/*WAVY*/
+
+.wavy {
+  font-size: 15vmin;
+  position: absolute;
+}
+
+#border {
+  color: black;  
+  text-shadow:
+    -1px -1px 0 white, 
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;  
+}
+
+#wave {
+  color: #09f;
+  animation: wave 3s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    clip-path: polygon(
+      0% 47%,
+      10% 48%,
+      33% 54%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(0% 60%,
+    15% 65%,
+    34% 66%,
+    51% 62%,
+    67% 50%,
+    84% 45%,
+    100% 46%,
+    100% 100%,
+    0% 100%
+    );
+  }
+}
+
+
+#logo{
+    border-radius: 50% ;
+    
+}
+
+
+h3{
+  margin: 40px;
+  font-size: 5rem;
+}
+
+section:nth-child(even) h3{
+    
+    text-shadow:  2px 4px rgba(0, 0, 0, 0.3);
+}
+section:nth-child(odd) h3{
+    
+    text-shadow:  2px 4px rgba(255, 255, 255, 0.3);
+}
+p{
+  margin:15px;
+    font-family: 1rem;
+}
+
+
+
+/*Galeria de trabajos*/
+.gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            position: relative;
+            flex-basis: 0 calc(33.33% - 20px);
+            overflow: hidden;
+            
+        }
+        .card:nth-child(4) {
+          margin-bottom: 50px;
+        }
+
+        .card:nth-child(5){
+          margin-bottom: 50px;
+        }
+        .card:nth-child(6){
+          margin-bottom: 50px;
+        }
+        
+
+        .card img {
+            width: 400px;
+            height: 200px;
+            transition: transform 0.6s ease;
+            box-shadow:  3px 4px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgb(0, 0, 0);
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 80%;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow:  3px 4px rgba(0, 0, 0, 0.3);
+            border: solid rgb(0, 0, 0);
+            color: #fff;
+            padding: 15px;
+            transition: bottom 0.6s ease;
+            opacity: 0;
+        }
+
+        .card:hover .card-content {
+            bottom: 0;
+            opacity: 1;
+        }
+
+       .card:hover .card-image{
+            transform:scale(0.85); 
+            transition: 0.4s;
+        }
+    .juegos a:visited{
+      color:rgb(159, 127, 255);
+    }
+    .juegos a:hover{
+      color:aquamarine;
+    }
+    .juegos a{
+      color:rgb(255, 255, 255);
+    }
+
+
+/*Sobre mi*/
+
+#about-me{
+  display: flex;
+  flex-direction: row;
+  margin: 100px 150px;
+}
+.img img {
+     border: 2px solid white ;
+}
+
+.img{
+    padding: 20px;
+    
+}
+
+
+/*Seccion de habilidades*/
+
+.habilidades {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    
+   
+  }
+  
+.skill {
+    margin-bottom: 20px;
+  }
+  
+.progress-bar {
+    width: 500px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    border: solid black;
+    overflow: hidden;
+    margin:30px;
+    box-shadow:  2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+.progress {
+    height: 100%;
+    width: 0;
+    animation: progressAnimation 12s ease-in-out infinite ;
+  }
+  
+  
+#html-progress {
+    background-color: #da822b;
+    animation-name: htmlProgressAnimation;
+  }
+  
+#css-progress {
+    background-color: #3cc5e7;
+    animation-name: cssProgressAnimation;
+  }
+  
+#js-progress {
+    background-color: #f4d03f;
+    animation-name: jsProgressAnimation;
+  }
+  
+#php-progress {
+    background-color: #9b59b6;
+    animation-name: phpProgressAnimation;
+  }
+  
+@keyframes progressAnimation {
+  0% {
+        width: 0; 
+    }
+    to {
+      width: 100%;
+      
+    }
+    
+  }
+  
+@keyframes htmlProgressAnimation {
+    0% {
+    width: 0; 
+  }
+  50% {
+    width: 99%; 
+  }
+  
+  100% {
+    width: 0; 
+  }
+  }
+  
+@keyframes cssProgressAnimation {
+    0% {
+    width: 0; 
+  }
+  50% {
+    width: 90%; 
+  }
+  100% {
+    width: 0; 
+  }
+  }
+  
+@keyframes jsProgressAnimation {
+    0% {
+    width: 0; 
+  }
+  50% {
+    width: 85%; 
+  }
+  100% {
+    width: 0; 
+  }
+  }
+  
+@keyframes phpProgressAnimation {
+    0% {
+    width: 0;
+  }
+  50% {
+    width: 75%; 
+  }
+  100% {
+    width: 0; 
+  }
+    } 
+
+
+
+/*SERVICIOS*/
+
+.services{
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+}
+
+.service-card {
+  position: relative;
+  width: 250px;
+  transition: all 0.3s ease;
+  margin-bottom: 50px;
+}
+
+.service-card div {
+  border: solid white;
+  border-radius: 4px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.service-card img{
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: translateY(25%);
+  transition: 0.3s ease;
+  opacity: 0;
+}
+
+.service-card:hover {
+  transform: perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0);
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 10%,
+    rgba(0, 0, 0, 0.303) 50%,
+    rgba(0, 0, 0, 0.493) 95%
+  );
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card:hover img {
+  opacity: 1;
+  transform: translateY(10%);
+}
+.service-p{
+  margin: 40px;
+}
+
+#cssimage{
+  width: 103px;
+}
+
+
+/*TESTIMONIOS*/
+.testimonials {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.testimonial-card {
+    width: 400px;
+    padding: 30px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out;
+    perspective: 1000px;
+}
+
+.testimonial-content {
+    padding-bottom: 20px;
+}
+
+.testimonial-card:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+}
+
+
+.testimonial-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.testimonial-content h3 {
+    font-size: 20px;
+    margin: 5px 40px 5px;
+    color: #444;
+}
+
+.testimonial-content span {
+    font-style: italic;
+    color: #777;
+    font-size: 14px;
+}
+.testimonial-content img {
+width: 35px;
+height: 35px;
+border-radius: 50%;
+
+}
+
+
+
+
+
+
+    /*Seccion de contacto*/
+
+
+/* Estilo para las etiquetas (labels) */
+form {
+  width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: rgb(23, 23, 23);
+  color: rgb(255, 255, 255);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: rgba(255, 255, 255, 0.749);
+  color: rgb(0, 0, 0);
+}
+
+#all {
+    margin: 1% 20% 2%;
+    padding: 7px;
+    border-radius: 4px;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.126);
+    background-color: rgb(210, 144, 45);
+    color: #000000;
+}
+
+textarea { resize:vertical; } /* reescalado solo vertical */
+
+textarea {
+   resize: vertical;
+   min-height: 60px;
+   max-height: 180px;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <header >
+        <nav>
+            <ul>
+                <li><img id="logo" height=40 src="../img/ddedaniel.jpg"></li>
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#info">Mi Trabajo</a></li>
+                <li><a href="#sobremi">Sobre Mí</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href=""><img height=25 src="../img/instagram.png"></a></li>
+                <li><a target="_blank" href="https://github.com/DaniiGG"><img height=25 src="../img/github.png"></a></li>
+            </ul>
+        </nav>
+        <div class="menu-hamburguesa">
+            <ul>
+              <li><a href="#hero">Inicio</a></li>
+              <li><a href="#info">Mi Trabajo</a></li>
+              <li><a href="#sobremi">Sobre Mí</a></li>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="#habilidades">Habilidades</a></li>
+              <li><a href="#testimonios">Testimonios</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+              <li><a href=""><img height="25" src="../img/instagram.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/DaniiGG"><img height="25" src="../img/github.png"></a></li>
+              
+            </ul>
+          </div>
+    </header>
+
+    <main>
+    <section>
+            <div class="info">
+            
+              <div id="title-content">
+                <h3 class="wavy" id="border">Hello,</h3>
+                <h3 class="wavy" id="wave">Hello, </h3>
+                <br><br><br><br>
+                <h3 class="wavy" id="border">I'm Daniel</h3>
+                <h3 class="wavy" id="wave">I'm Daniel </h3>
+              </div>
+              
+              <div id="info-content">
+                <p>I'm studying in IES Francisco Ayala (Granada).</p>
+                <p class="juegos"><a   target="_blank" href="https://github.com/DaniiGG">My projects <img height=25 src="../img/github.png"></a></p>
+              </div>
+            </div>
+    </section>
+
+    <section class="trabajos">
+        <h3>Some of my GitHub projects...</h3>
+                <div class="gallery">
+                    <div class="card">
+
+                        <div class="card-image"><img src="../img/ahorcado.png" alt="Imagen 1"></div>
+                        <div class="card-content">
+                            <p class="juegos"><a target="_blank" href="https://github.com/DaniiGG/MiniJuegos">Juego del ahorcado </a></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image"><img src="../img/AdivinaRGB.png" alt="Imagen 2"></div>
+                        <div class="card-content">
+                          <p class="juegos"><a target="_blank" href="https://github.com/DaniiGG/AdivinarColor">Adivina el color RGB </a></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image"><img src="../img/crono.png" alt="Imagen 3"></div>
+                        <div class="card-content">
+                          <p class="juegos"><a target="_blank" href="https://github.com/DaniiGG/MiniJuegos">Cronómetro </a></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image"><img src="../img/listacompra.png" alt="Imagen 4"></div>
+                        <div class="card-content">
+                          <p class="juegos"><a target="_blank" href="https://github.com/DaniiGG/MiniJuegos">Lista de la compra </a></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image"><img src="../img/Monedero.png" alt="Imagen 5"></div>
+                        <div class="card-content">
+                          <p class="juegos"><a target="_blank" href="https://github.com/DaniiGG/Monedero">Monedero para controlar transacciones </a></p>
+                        </div>
+                    </div>
+                    <div class="card" id="last-card">
+                        <div class="card-image"><img src="../img/parejas.png" alt="Imagen 6"></div>
+                        <div class="card-content">
+                          <p class="juegos"><a target="_blank" href="https://github.com/DaniiGG/MiniJuegos">Juego de las parejas</a></p>
+                        </div>
+                    </div>
+                    
+                </div>
+        </section>
+
+
+
+        <!-- Sección Sobre Mí -->
+    <section id="sobremi">
+      <h3>About me</h3>
+      <div id="about-me">
+      <div class="img"><img height=300 width=300 src="../img/WIN_20231115_14_04_42_Pro.jpg"   alt=""></div>
+      <div> 
+        <h2>Dynamic Web Developer</h2>
+        <p> I'm a web developer passionate about crafting user-centric experiences. 
+          Proficient in front-end and back-end technologies, I specialize in creating intuitive designs with robust functionality. 
+          I thrive on leveraging cutting-edge tools to exceed expectations and deliver impactful digital solutions.</p>
+      </div>
+    </div>
+    </section>
+
+
+        <!-- Sección Habilidades -->
+    <section>
+        <h3>Level of  main languajes</h3>
+        <div class="habilidades">
+        
+        <div class="skill">
+            <h2>HTML</h2>
+            <div class="progress-bar">
+              <div class="progress " id="html-progress"></div>
+            </div>
+          </div>
+      
+          <div class="skill">
+            <h2>CSS</h2>
+            <div class="progress-bar">
+              <div class="progress" id="css-progress"></div>
+            </div>
+          </div>
+      
+          <div class="skill">
+            <h2>JavaScript</h2>
+            <div class="progress-bar">
+              <div class="progress " id="js-progress"></div>
+            </div>
+          </div>
+      
+          <div class="skill">
+            <h2>PHP</h2>
+            <div class="progress-bar">
+              <div class="progress " id="php-progress"></div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+    <!-- Sección Servicios -->
+    <section id="servicios">
+      <h3>Services</h3>
+      <div class="services">
+
+        <div class="service-card">
+          <div>
+            <h2>Front-End Development</h2>
+            <p class="service-p">I specialize in crafting engaging user interfaces using cutting-edge front-end technologies.</p>
+          </div>
+          <img src="../img/javascript-logo-escudo.png">
+        </div>
+
+          <div class="service-card">
+          <div>
+            <h2>Back-End Development</h2>
+            <p class="service-p">Proficient in building robust server-side applications and databases to power web solutions.</p>
+          </div>
+          <img src="../img/PHP-logo.svg.png">
+        </div>
+          
+          <div class="service-card">
+          <div>
+            <h2>Web <br> Designing</h2>
+            <p class="service-p">Skilled in creating visually stunning and intuitive web designs for optimal user experiences.</p>
+          </div>
+          <img id="cssimage" src="../img/CSS3_logo.svg.png">
+          </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Sección Testimonios -->
+    <section id="testimonios">
+      <h3>Testimonials</h3>
+      <div class="testimonials">
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <p>"Working with this web developer was a transformative experience. Their commitment to quality and innovation elevated our project to new heights."</p>
+                <div><img src="../img/ddedaniel.jpg"></div>
+                <h3>John Doe</h3>
+                <span>CEO, Company XYZ</span>
+            </div>
+        </div>
+        
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <p>"Exemplary backend skills! They optimized our systems, resulting in remarkable efficiency gains. A true asset to any project."</p>
+                <div><img src="../img/ddedaniel.jpg"></div>
+                <h3>Jane Smith</h3>
+                <span>CTO, Tech Solutions Inc.</span>
+            </div>
+        </div>
+        
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <p>"Their web design finesse is unmatched. Our revamped interface is a testament to their creativity and user-centric approach."</p>
+                <div><img src="../img/ddedaniel.jpg"></div>
+                <h3>David Johnson</h3>
+                <span>Marketing Director, Creative Minds Agency</span>
+            </div>
+        </div>
+        
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <p>"An absolute professional! They delivered exceptional results promptly, showcasing expertise and dedication."</p>
+                <div><img src="../img/ddedaniel.jpg"></div>
+                <h3>Sarah Wilson</h3>
+                <span>Project Manager, TopTech Enterprises</span>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+    <!-- Sección Contacto -->
+    <section id="contacto">
+      <h3>Contact with me</h3>
+      <h1>Throughout a formulary</h1>
+      <div id="all">
+        
+        <h1>Formulary</h1>
+          <hr>
+        
+        <form method="POST">
+        <label for="nombre">name:</label><br />
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre"/><br />
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" placeholder="Email"/><br />
+        <label for="mensaje">Message:</label><br />
+        <textarea  id="mensaje" name="mensaje" placeholder="Mensaje"></textarea><br />
+        <input type="submit" value="Send message" />
+      </form>
+        
+    </div>
+    <h1> Or through here</h1>
+    </section>
+
+    
+
+
+
+
+    <!-- Sección Mi Trabajo -->
+    <section id="trabajo">
+        <!-- Galería de fotos -->
+    </section>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- Sección Redes Sociales -->
+    <section id="redessociales">
+        <!-- Iconos de redes sociales -->
+    </section>
+</main>
+</body>
+</html>
