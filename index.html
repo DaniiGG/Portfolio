@@ -12,6 +12,7 @@
     margin: 0;
     padding: 0;
     
+    
 }
 
 /**Menu de navegacion**/
@@ -140,19 +141,22 @@ section{
         
         
         section:nth-child(even) {
-        background-color: rgb(197, 132, 33);
+        background-color: #dddddd;
         justify-content: center;
         justify-content: space-around;
         }
         section:nth-child(1) {
+           background: linear-gradient(80deg, rgb(23, 23, 23) 50%, rgb(93, 166, 244) 40%);
           background-color: rgb(23, 23, 23);
-          height: 70vmin;
+          border: none;
+          height: calc(100%);
           display: unset;
         }
 
         section:nth-child(2) {
-        background-color: rgb(197, 132, 33);
+        background-color: #dddddd;
         height: calc(100%);
+        border: none;
         display: unset;
         }
         section:nth-child(3) {
@@ -161,7 +165,9 @@ section{
           display: unset;
         }
         section:nth-child(4) {
-        background-color: rgb(197, 132, 33);
+        background-attachment: fixed;
+          background-size: cover;
+          background-image: url("img/pexels-photo.jpg");
         height: calc(100%);
         display: unset;
         }
@@ -173,7 +179,9 @@ section{
         }
 
         section:nth-child(6) {
-          background-color: rgb(197, 132, 33);
+          background-attachment: fixed;
+          background-size: cover;
+          background-image: url("img/abstract-white-and-gray-light-gradient-lines-background-free-vector.jpg");
           height: calc(100%);
         display: unset;
         }
@@ -188,64 +196,20 @@ section{
 
 .info{
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: wrap;
+  align-items: center;
   justify-content: space-around;
 }
-
-
-
-
-
-
-
-/*WAVY*/
-
-.wavy {
-  font-size: 15vmin;
-  position: absolute;
+#info-content{
+  width: 35vw;
 }
-
-#border {
-  color: black;  
-  text-shadow:
-    -1px -1px 0 white, 
-    1px -1px 0 white,
-    -1px 1px 0 white,
-    1px 1px 0 white;  
+#info-image{
+  width: 35vw;
 }
-
-#wave {
-  color: #09f;
-  animation: wave 3s ease-in-out infinite;
-}
-
-@keyframes wave {
-  0%, 100% {
-    clip-path: polygon(
-      0% 47%,
-      10% 48%,
-      33% 54%,
-      54% 60%,
-      70% 61%,
-      84% 59%,
-      100% 52%,
-      100% 100%,
-      0% 100%
-    );
-  }
-
-  50% {
-    clip-path: polygon(0% 60%,
-    15% 65%,
-    34% 66%,
-    51% 62%,
-    67% 50%,
-    84% 45%,
-    100% 46%,
-    100% 100%,
-    0% 100%
-    );
-  }
+#info-image .img img{
+  margin-top: 20px;
+  border-radius: 10px;
+  border: solid #000000;
 }
 
 
@@ -261,11 +225,9 @@ h3{
 }
 
 section:nth-child(even) h3{
-    
     text-shadow:  2px 4px rgba(0, 0, 0, 0.3);
 }
 section:nth-child(odd) h3{
-    
     text-shadow:  2px 4px rgba(255, 255, 255, 0.3);
 }
 p{
@@ -344,21 +306,7 @@ p{
     }
 
 
-/*Sobre mi*/
 
-#about-me{
-  display: flex;
-  flex-direction: row;
-  margin: 100px 150px;
-}
-.img img {
-     border: 2px solid white ;
-}
-
-.img{
-    padding: 20px;
-    
-}
 
 
 /*Seccion de habilidades*/
@@ -491,7 +439,7 @@ p{
 }
 
 .service-card div {
-  border: solid white;
+  border: solid rgb(255, 255, 255);
   border-radius: 4px;
   object-fit: cover;
   width: 100%;
@@ -524,8 +472,8 @@ p{
   background-image: linear-gradient(
     to bottom,
     transparent 10%,
-    rgba(0, 0, 0, 0.303) 50%,
-    rgba(0, 0, 0, 0.493) 95%
+    rgba(255, 255, 255, 0.085) 50%,
+    rgba(255, 255, 255, 0.089) 95%
   );
   opacity: 0;
   transition: all 0.3s ease;
@@ -550,9 +498,41 @@ p{
 
 /*TESTIMONIOS*/
 .testimonials {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+	width: 1280px;
+    height: auto;
+	margin:50px auto 0;
+	overflow: hidden;
+}
+
+.testimonials ul {
+	display: flex;
+  justify-content: center;
+	padding: 0;
+	width: 400%;
+  align-items: center;
+	animation: slide 25s infinite alternate ease-in-out;
+}
+
+.testimonials li {
+	width: 100%;
+	list-style: none;
+}
+.testimonials li:hover {
+	transform: none;
+}
+
+@keyframes slide {
+	0% {margin-left: 33%;}
+	20% {margin-left: 27%;}
+	
+	25% {margin-left: -67%;}
+	45% {margin-left: -73%;}
+	
+	50% {margin-left: -167%;}
+	70% {margin-left: -173%;}
+	
+	75% {margin-left: -267%;}
+	100% {margin-left: -273%;}
 }
 
 .testimonial-card {
@@ -563,16 +543,11 @@ p{
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease-in-out;
     perspective: 1000px;
 }
 
 .testimonial-content {
     padding-bottom: 20px;
-}
-
-.testimonial-card:hover {
-    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
 }
 
 
@@ -655,7 +630,7 @@ input[type="submit"]:hover {
     padding: 7px;
     border-radius: 4px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.126);
-    background-color: rgb(210, 144, 45);
+    background-color: rgb(23, 23, 23);
     color: #000000;
 }
 
@@ -707,17 +682,19 @@ textarea {
     <section>
             <div class="info">
             
-              <div id="title-content">
-                <h3 class="wavy" id="border">Hello,</h3>
-                <h3 class="wavy" id="wave">Hello, </h3>
-                <br><br><br><br>
-                <h3 class="wavy" id="border">I'm Daniel</h3>
-                <h3 class="wavy" id="wave">I'm Daniel </h3>
+              <div id="info-content">
+                <h3  id="border">Hello,<br> I'm Daniel</h3>
+                
+                        <p>I'm studying in IES Francisco Ayala (Granada).</p>
+                <p class="juegos"><a   target="_blank" href="https://github.com/DaniiGG">My projects <img height=25 src="img/github.png"></a></p>
               </div>
               
-              <div id="info-content">
-                <p>I'm studying in IES Francisco Ayala (Granada).</p>
-                <p class="juegos"><a   target="_blank" href="https://github.com/DaniiGG">My projects <img height=25 src="img/github.png"></a></p>
+              <div id="info-image">
+                <div class="img"><img height=300 width=300 src="img/WIN_20231115_14_04_42_Pro.jpg"   alt=""></div>
+                <h2>Dynamic Web Developer</h2>
+                <p> I'm a web developer passionate about crafting user-centric experiences. 
+                  Proficient in front-end and back-end technologies, I specialize in creating intuitive designs with robust functionality. 
+                  I thrive on leveraging cutting-edge tools to exceed expectations and deliver impactful digital solutions.</p>
               </div>
             </div>
     </section>
@@ -768,24 +745,44 @@ textarea {
 
 
 
-        <!-- Sección Sobre Mí -->
-    <section id="sobremi">
-      <h3>About me</h3>
-      <div id="about-me">
-      <div class="img"><img height=300 width=300 src="img/WIN_20231115_14_04_42_Pro.jpg"   alt=""></div>
-      <div> 
-        <h2>Dynamic Web Developer</h2>
-        <p> I'm a web developer passionate about crafting user-centric experiences. 
-          Proficient in front-end and back-end technologies, I specialize in creating intuitive designs with robust functionality. 
-          I thrive on leveraging cutting-edge tools to exceed expectations and deliver impactful digital solutions.</p>
+        <!-- Sección Servicios -->
+    <section id="servicios">
+      <h3>Services</h3>
+      <div class="services">
+
+        <div class="service-card">
+          <div>
+            <h2>Front-End Development</h2>
+            <p class="service-p">I specialize in crafting engaging user interfaces using cutting-edge front-end technologies.</p>
+          </div>
+          <img src="img/javascript-logo-escudo.png">
+        </div>
+
+          <div class="service-card">
+          <div>
+            <h2>Back-End Development</h2>
+            <p class="service-p">Proficient in building robust server-side applications and databases to power web solutions.</p>
+          </div>
+          <img src="img/PHP-logo.svg.png">
+        </div>
+          
+          <div class="service-card">
+          <div>
+            <h2>Web <br> Designing</h2>
+            <p class="service-p">Skilled in creating visually stunning and intuitive web designs for optimal user experiences.</p>
+          </div>
+          <img id="cssimage" src="img/CSS3_logo.svg.png">
+          </div>
       </div>
-    </div>
+
     </section>
+
+
 
 
         <!-- Sección Habilidades -->
     <section>
-        <h3>Level of  main languajes</h3>
+        <h3>Main languajes</h3>
         <div class="habilidades">
         
         <div class="skill">
@@ -819,44 +816,15 @@ textarea {
     </section>
 
 
-    <!-- Sección Servicios -->
-    <section id="servicios">
-      <h3>Services</h3>
-      <div class="services">
-
-        <div class="service-card">
-          <div>
-            <h2>Front-End Development</h2>
-            <p class="service-p">I specialize in crafting engaging user interfaces using cutting-edge front-end technologies.</p>
-          </div>
-          <img src="img/javascript-logo-escudo.png">
-        </div>
-
-          <div class="service-card">
-          <div>
-            <h2>Back-End Development</h2>
-            <p class="service-p">Proficient in building robust server-side applications and databases to power web solutions.</p>
-          </div>
-          <img src="img/PHP-logo.svg.png">
-        </div>
-          
-          <div class="service-card">
-          <div>
-            <h2>Web <br> Designing</h2>
-            <p class="service-p">Skilled in creating visually stunning and intuitive web designs for optimal user experiences.</p>
-          </div>
-          <img id="cssimage" src="img/CSS3_logo.svg.png">
-          </div>
-      </div>
-    </section>
-
-
+    
 
 
     <!-- Sección Testimonios -->
     <section id="testimonios">
       <h3>Testimonials</h3>
       <div class="testimonials">
+        <ul>
+        <li>
         <div class="testimonial-card">
             <div class="testimonial-content">
                 <p>"Working with this web developer was a transformative experience. Their commitment to quality and innovation elevated our project to new heights."</p>
@@ -865,7 +833,8 @@ textarea {
                 <span>CEO, Company XYZ</span>
             </div>
         </div>
-        
+      </li>
+      <li>
         <div class="testimonial-card">
             <div class="testimonial-content">
                 <p>"Exemplary backend skills! They optimized our systems, resulting in remarkable efficiency gains. A true asset to any project."</p>
@@ -875,6 +844,8 @@ textarea {
             </div>
         </div>
         
+      </li>
+      <li>
         <div class="testimonial-card">
             <div class="testimonial-content">
                 <p>"Their web design finesse is unmatched. Our revamped interface is a testament to their creativity and user-centric approach."</p>
@@ -883,7 +854,8 @@ textarea {
                 <span>Marketing Director, Creative Minds Agency</span>
             </div>
         </div>
-        
+      </li>
+      <li>
         <div class="testimonial-card">
             <div class="testimonial-content">
                 <p>"An absolute professional! They delivered exceptional results promptly, showcasing expertise and dedication."</p>
@@ -892,7 +864,10 @@ textarea {
                 <span>Project Manager, TopTech Enterprises</span>
             </div>
         </div>
+      </li>
+      </ul>
     </div>
+
   </section>
 
 
