@@ -1,0 +1,717 @@
+/* Reset y configuración básica */
+/* ---------------------------- */
+
+/* Reset y configuración básica */
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del cuerpo */
+   body {
+font-family:sans-serif;
+line-height: 1.6;
+
+background-color: #3cc5e7;
+width: 100vw;
+}
+
+
+/* Menú de navegación */
+/* ------------------ */
+
+/* Encabezado */
+header {
+    background-color: #333;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Lista del menú */
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+
+nav ul li:first-child {
+    margin-right: 10vw;
+}
+nav ul li:nth-child(8) {
+    margin-right: 10vw;
+}
+nav ul li:nth-child(9) {
+    margin-right: -10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Menú hamburguesa */
+.menu-hamburguesa {
+    display: none;
+}
+
+.menu-hamburguesa ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Efectos de hover */
+a:hover {
+    color: rgb(164, 161, 161);
+    text-decoration: underline;
+}
+
+li:hover {
+    transform: scale(1.50);
+    transition: 0.4s;
+}
+
+.menu-hamburguesa li:hover {
+    transform: none;
+}
+
+
+
+/* Secciones */
+/* --------- */
+
+
+/* Contenedor principal */
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+/* Secciones individuales */
+section {
+    display: flex;
+    border: 1px solid rgb(255, 255, 255);
+    text-align: center;
+}
+
+
+
+
+    /* Estilos para secciones impares */
+section:nth-child(odd) {
+    /* Fondo oscuro, texto blanco, disposición del contenido */
+    background-color: rgb(23, 23, 23);
+    color: white;
+    
+}
+
+/* Estilos para secciones pares */
+section:nth-child(even) {
+    /* Fondo gris claro, disposición del contenido */
+    background-color: #dddddd;
+    
+}
+
+/* Estilos específicos para diferentes secciones */
+section:nth-child(1) {
+    /* Fondo degradado y sólido, sin borde, altura total */
+    background: linear-gradient(80deg, rgb(23, 23, 23) 50%, rgb(93, 166, 244) 40%);
+    background-color: rgb(23, 23, 23);
+    border: none;
+    height: calc(100%);
+    display: unset; /* Establece el comportamiento por defecto */
+}
+
+section:nth-child(2) {
+    /* Fondo gris claro, altura total, sin borde */
+    background-color: #dddddd;
+    height: calc(100%);
+    border: none;
+    display: unset; /* Establece el comportamiento por defecto */
+}
+
+section:nth-child(3) {
+    /* Fondo oscuro, altura total */
+    background-color: rgb(23, 23, 23);
+    height: calc(100%);
+    display: unset; /* Establece el comportamiento por defecto */
+}
+
+section:nth-child(4) {
+    /* Imagen de fondo con tamaño ajustado y altura total */
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url("img/pexels-photo.jpg");
+    height: calc(100%);
+    display: unset; /* Establece el comportamiento por defecto */
+}
+
+
+    section:nth-child(5) {
+      background-color: rgb(23, 23, 23);
+      height: calc(100%);
+    display: unset;
+    }
+
+    section:nth-child(6) {
+      background-color: #dddddd;
+      height: calc(100%);
+    display: unset;
+    }
+
+    section:nth-child(7) {
+      background-color: rgb(23, 23, 23);
+      height: calc(100%);
+    display: unset;
+    }
+
+
+/* HERO */
+/* --------- */
+
+/* Estilos para el área HERO */
+.info {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Estilos para contenido específico dentro del área HERO */
+#info-content {
+    width: 35vw;
+}
+
+#info-image {
+    width: 35vw;
+}
+
+#info-image .img img {
+    margin-top: 20px;
+    border-radius: 10px;
+    border: solid #000000;
+    width: 20vw;
+    height: 20vw;
+}
+
+#logo {
+    border-radius: 50%;
+}
+
+/* Estilos para títulos y textos dentro de secciones impares y pares */
+h3 {
+    margin: 40px;
+    font-size: 5vw;
+}
+
+section:nth-child(even) h3 {
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+section:nth-child(odd) h3 {
+    text-shadow: 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos para párrafos */
+p {
+    margin: 15px;
+    font-family: 1rem;
+}
+
+
+/* Galeria */
+/* --------- */
+
+
+/* Estilos para la galería de trabajos */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilos para las tarjetas de la galería */
+.card {
+    position: relative;
+    flex-basis: 0 calc(33.33% - 20px);
+    overflow: hidden;
+}
+
+/* Márgenes adicionales para ciertas tarjetas */
+.card:nth-child(4),
+.card:nth-child(5),
+.card:nth-child(6) {
+    margin-bottom: 50px;
+}
+
+/* Imágenes en las tarjetas */
+.card img {
+    width: 400px;
+    height: 200px;
+    transition: transform 0.6s ease;
+    box-shadow: 3px 4px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgb(0, 0, 0);
+    
+}
+
+/* Contenido emergente en tarjeta al pasar el mouse */
+.card-content {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 3px 4px rgba(0, 0, 0, 0.3);
+    border: solid rgb(0, 0, 0);
+    color: #fff;
+    padding: 15px;
+    transition: bottom 0.6s ease;
+    opacity: 0;
+    
+}
+
+/* Mostrar el contenido emergente al pasar el mouse */
+.card:hover .card-content {
+    bottom: 0;
+    opacity: 1;
+    
+}
+
+/* Efecto al pasar el mouse sobre la imagen */
+.card:hover .card-image {
+    transform: scale(0.85);
+    transition: 0.4s;
+}
+
+/* Estilos para enlaces en la sección de juegos */
+.juegos a:visited {
+    color: rgb(159, 127, 255);
+}
+
+.juegos a:hover {
+    color: aquamarine;
+}
+
+.juegos a {
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+/* Habilidades */
+/* --------- */
+
+/* Sección de habilidades */
+.habilidades {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+/* Estilos para habilidades */
+.skill {
+    margin-bottom: 20px;
+}
+
+/* Barra de progreso */
+.progress-bar {
+    flex-basis: 0 calc(33.33% - 20px);
+    width: 500px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    border: solid black;
+    overflow: hidden;
+    margin: 30px;
+    box-shadow: 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación de la barra de progreso */
+.progress {
+    height: 100%;
+    width: 0;
+    animation: progressAnimation 12s ease-in-out infinite;
+}
+
+/* Colores de la barra de progreso */
+#html-progress {
+    background-color: #da822b;
+    animation-name: htmlProgressAnimation;
+}
+
+#css-progress {
+    background-color: #3cc5e7;
+    animation-name: cssProgressAnimation;
+}
+
+#js-progress {
+    background-color: #f4d03f;
+    animation-name: jsProgressAnimation;
+}
+
+#php-progress {
+    background-color: #9b59b6;
+    animation-name: phpProgressAnimation;
+}
+
+@keyframes progressAnimation {
+0% {
+    width: 0; 
+}
+to {
+  width: 100%;
+  
+}
+
+}
+
+@keyframes htmlProgressAnimation {
+0% {
+width: 0; 
+}
+50% {
+width: 99%; 
+}
+
+100% {
+width: 0; 
+}
+}
+
+@keyframes cssProgressAnimation {
+0% {
+width: 0; 
+}
+50% {
+width: 90%; 
+}
+100% {
+width: 0; 
+}
+}
+
+@keyframes jsProgressAnimation {
+0% {
+width: 0; 
+}
+50% {
+width: 85%; 
+}
+100% {
+width: 0; 
+}
+}
+
+@keyframes phpProgressAnimation {
+0% {
+width: 0;
+}
+50% {
+width: 75%; 
+}
+100% {
+width: 0; 
+}
+} 
+
+
+
+/*SERVICIOS*/
+
+/* Estilos para la sección de servicios */
+.services {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+/* Estilos para las tarjetas de servicio */
+.service-card {
+    position: relative;
+    width: 250px;
+    transition: all 0.3s ease;
+    margin-bottom: 50px;
+}
+
+.service-card div {
+    border: solid rgb(255, 255, 255);
+    border-radius: 4px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.service-card img {
+    position: absolute;
+    width: 200px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(25%);
+    transition: 0.3s ease;
+    opacity: 0;
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta de servicio */
+.service-card:hover {
+    transform: perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0);
+}
+
+/* Gradiente antes de la imagen al pasar el mouse sobre la tarjeta */
+.service-card::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(
+        to bottom,
+        transparent 10%,
+        rgba(255, 255, 255, 0.085) 50%,
+        rgba(255, 255, 255, 0.089) 95%
+    );
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+/* Efecto al pasar el mouse sobre la imagen dentro de la tarjeta */
+.service-card:hover img {
+    opacity: 1;
+    transform: translateY(10%);
+}
+
+/* Estilos para párrafos dentro de las tarjetas de servicio */
+.service-p {
+    margin: 40px;
+}
+
+#cssimage {
+    width: 103px;
+}
+
+/* Estilos para la sección de testimonios */
+
+.testimonials {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.testimonial-card {
+    background-color: white;
+    width: 300px;
+    flex-basis: 0 calc(33.33% - 20px);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.testimonial-content {
+    margin-bottom: 20px;
+}
+
+.testimonial-content p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.testimonial-content img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.testimonial-content h3 {
+    font-size: 18px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.testimonial-content span {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Hover effect */
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+
+/*Seccion de contacto*/
+
+
+/* Estilo para las etiquetas (labels) */
+#all-form{
+    margin-left: 30%;
+    width: 40%;
+}
+
+.formulary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    width: 100%;
+    flex-direction: column;
+    gap: 35px;
+    background: #dddddd;
+}
+
+.inputBox {
+    position: relative;
+    width: 100%;
+}
+
+.inputBox input, .inputBox textarea {
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    border: none;
+    color: #000000;
+    font-size: 1em;
+    background: transparent;
+    border-left: 3px solid #000000;
+    border-bottom: 3px solid #010101;
+    transition: 0.1s;
+}
+
+.inputBox textarea{
+    resize: none;
+}
+
+.inputBox span {
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    transform: translateY(-7px);
+    margin-left: 5px;
+    pointer-events: none;
+    font-size: 12px;
+    color: #000000;
+    
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.inputBox input:valid~span,
+.inputBox input:focus~span,
+.inputBox textarea:valid~span,
+.inputBox textarea:focus~span
+ {
+    transform: translateX(10px) translateY(-23px);
+    font-size: 0.8em;
+    letter-spacing: 0.2em;
+    color: #000000;
+    border: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus,
+.inputBox textarea:valid,
+.inputBox textarea:focus {
+    border: 3px solid #000000;
+}
+
+.enter {
+    height: 45px;
+    width: 100px;
+    border: 3px solid #000000;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 1em;
+    font-family: Montserrat;
+    font-weight: 700;
+    color: #000000;
+}
+
+.enter:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+
+/*FOOTER*/
+
+
+footer{
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    gap: 15px;
+}
+
+
+.footer-socialMedia i{
+    font-size: 2rem;
+    margin: 0px 10px;
+    color: white;
+}
+
+.social-media-icon{
+    transition: 0.3s;
+}
+
+.social-media-icon:hover{
+    transform: scale(1.25);
+}
+
+
+
+/* Media query para cambiar al modo hamburguesa en una cierta resolución */
+@media (max-width: 970px) {
+    header nav ul {
+      display: none; 
+    }
+  
+    .menu-hamburguesa {
+      display: block; 
+    }
+  
+    .menu-hamburguesa ul {
+      display: block;
+      text-align: center;
+    }
+  
+    .menu-hamburguesa li:hover{
+      background-color: #000000;
+  transition: 1s;
+    }
+  
+  }
