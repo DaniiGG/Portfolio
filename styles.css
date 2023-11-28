@@ -1,6 +1,25 @@
 /* Reset y configuración básica */
 /* ---------------------------- */
 
+:root{
+    --headerfoot: #333;
+  --heroazul: #3cc5e7;
+  --sectionnegra: #171717;
+  --textoBlanco: #fff;
+  --textoGris: #a4a1a1;
+  --fondoGrisClaro: #dddddd;
+  --fondoDegradado: linear-gradient(80deg, var(--sectionnegra) 50%, var(--heroazul) 40%);
+  --bordeNegro: #000;
+  --textoSombraNegra: rgba(0, 0, 0, 0.3);
+  --textoSombraBlanca: rgba(255, 255, 255, 0.3);
+  --hoverColor: rgb(164, 161, 161);
+  --linkHover: aquamarine;
+  --htmlColor: #da822b;
+  --cssColor: #3cc5e7;
+  --jsColor: #f4d03f;
+  --phpColor: #9b59b6;
+}
+
 /* Reset y configuración básica */
 *, *::after, *::before {
     margin: 0;
@@ -12,8 +31,6 @@
    body {
 font-family:sans-serif;
 line-height: 1.6;
-
-background-color: #3cc5e7;
 width: 100vw;
 }
 
@@ -23,7 +40,7 @@ width: 100vw;
 
 /* Encabezado */
 header {
-    background-color: #333;
+    background-color: var(--headerfoot);
     padding: 20px;
     width: 100%;
 }
@@ -42,19 +59,21 @@ nav ul li {
     transition: 0.3s;
 }
 
+/*Configuracion de margenes de li*/
 
 nav ul li:first-child {
     margin-right: 10vw;
 }
-nav ul li:nth-child(8) {
+nav ul li:nth-child(7) {
     margin-right: 10vw;
 }
-nav ul li:nth-child(9) {
+nav ul li:nth-child(8) {
     margin-right: -10px;
 }
 
+
 nav ul li a {
-    color: #fff;
+    color: var(--textoBlanco);
     text-decoration: none;
 }
 
@@ -101,7 +120,7 @@ main {
 /* Secciones individuales */
 section {
     display: flex;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid var(--textoBlanco);
     text-align: center;
 }
 
@@ -111,23 +130,23 @@ section {
     /* Estilos para secciones impares */
 section:nth-child(odd) {
     /* Fondo oscuro, texto blanco, disposición del contenido */
-    background-color: rgb(23, 23, 23);
-    color: white;
+    background-color: var(--sectionnegra);
+    color: var(--textoBlanco);
     
 }
 
 /* Estilos para secciones pares */
 section:nth-child(even) {
     /* Fondo gris claro, disposición del contenido */
-    background-color: #dddddd;
+    background-color: var(--fondoGrisClaro);
     
 }
 
 /* Estilos específicos para diferentes secciones */
 section:nth-child(1) {
     /* Fondo degradado y sólido, sin borde, altura total */
-    background: linear-gradient(80deg, rgb(23, 23, 23) 50%, rgb(93, 166, 244) 40%);
-    background-color: rgb(23, 23, 23);
+    background: linear-gradient(80deg, var(--sectionnegra) 50%, var(--heroazul) 40%);
+    background-color: var(--sectionnegra);
     border: none;
     height: calc(100%);
     display: unset; /* Establece el comportamiento por defecto */
@@ -135,7 +154,7 @@ section:nth-child(1) {
 
 section:nth-child(2) {
     /* Fondo gris claro, altura total, sin borde */
-    background-color: #dddddd;
+    background-color: var(--fondoGrisClaro);
     height: calc(100%);
     border: none;
     display: unset; /* Establece el comportamiento por defecto */
@@ -143,7 +162,7 @@ section:nth-child(2) {
 
 section:nth-child(3) {
     /* Fondo oscuro, altura total */
-    background-color: rgb(23, 23, 23);
+    background-color: var(--sectionnegra);
     height: calc(100%);
     display: unset; /* Establece el comportamiento por defecto */
 }
@@ -159,19 +178,19 @@ section:nth-child(4) {
 
 
     section:nth-child(5) {
-      background-color: rgb(23, 23, 23);
+      background-color: var(--sectionnegra);
       height: calc(100%);
     display: unset;
     }
 
     section:nth-child(6) {
-      background-color: #dddddd;
+      background-color: var(--fondoGrisClaro);
       height: calc(100%);
     display: unset;
     }
 
     section:nth-child(7) {
-      background-color: rgb(23, 23, 23);
+      background-color: var(--sectionnegra);
       height: calc(100%);
     display: unset;
     }
@@ -200,7 +219,7 @@ section:nth-child(4) {
 #info-image .img img {
     margin-top: 20px;
     border-radius: 10px;
-    border: solid #000000;
+    border: solid var(--bordeNegro);
     width: 20vw;
     height: 20vw;
 }
@@ -213,20 +232,25 @@ section:nth-child(4) {
 h3 {
     margin: 40px;
     font-size: 5vw;
+    font-family:'Trebuchet MS';
+}
+
+h2 {
+    font-size: 1.9vw;
 }
 
 section:nth-child(even) h3 {
-    text-shadow: 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 4px var(--textoSombraNegra);
 }
 
 section:nth-child(odd) h3 {
-    text-shadow: 2px 4px rgba(255, 255, 255, 0.3);
+    text-shadow: 2px 4px var(--textoSombraBlanca);
 }
 
 /* Estilos para párrafos */
 p {
     margin: 15px;
-    font-family: 1rem;
+    font-size: 1vw;
 }
 
 
@@ -262,8 +286,8 @@ p {
     width: 400px;
     height: 200px;
     transition: transform 0.6s ease;
-    box-shadow: 3px 4px rgba(0, 0, 0, 0.3);
-    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 3px 4px var(--textoSombraNegra);
+    border: 2px solid var(--bordeNegro);
     
 }
 
@@ -274,9 +298,9 @@ p {
     left: 0;
     width: 80%;
     background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 3px 4px rgba(0, 0, 0, 0.3);
-    border: solid rgb(0, 0, 0);
-    color: #fff;
+    box-shadow: 3px 4px var(--textoSombraNegra);
+    border: solid var(--bordeNegro);;
+    color: var(--textoBlanco);
     padding: 15px;
     transition: bottom 0.6s ease;
     opacity: 0;
@@ -298,15 +322,15 @@ p {
 
 /* Estilos para enlaces en la sección de juegos */
 .juegos a:visited {
-    color: rgb(159, 127, 255);
+    color: var(--phpColor);
 }
 
 .juegos a:hover {
-    color: aquamarine;
+    color: var(--linkHover);
 }
 
 .juegos a {
-    color: rgb(255, 255, 255);
+    color: var(--textoBlanco);
 }
 
 
@@ -332,12 +356,12 @@ p {
     flex-basis: 0 calc(33.33% - 20px);
     width: 500px;
     height: 20px;
-    background-color: #ddd;
+    background-color: var(--fondoGrisClaro);
     border-radius: 10px;
-    border: solid black;
+    border: solid var(--bordeNegro);
     overflow: hidden;
     margin: 30px;
-    box-shadow: 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 4px var(--textoSombraNegra);
 }
 
 /* Animación de la barra de progreso */
@@ -349,22 +373,22 @@ p {
 
 /* Colores de la barra de progreso */
 #html-progress {
-    background-color: #da822b;
+    background-color: var(--htmlColor);
     animation-name: htmlProgressAnimation;
 }
 
 #css-progress {
-    background-color: #3cc5e7;
+    background-color: var(--cssColor);
     animation-name: cssProgressAnimation;
 }
 
 #js-progress {
-    background-color: #f4d03f;
+    background-color: var(--jsColor);
     animation-name: jsProgressAnimation;
 }
 
 #php-progress {
-    background-color: #9b59b6;
+    background-color: var(--phpColor);
     animation-name: phpProgressAnimation;
 }
 
@@ -448,7 +472,7 @@ width: 0;
 }
 
 .service-card div {
-    border: solid rgb(255, 255, 255);
+    border: solid var(--textoBlanco);
     border-radius: 4px;
     object-fit: cover;
     width: 100%;
@@ -519,12 +543,12 @@ width: 0;
 }
 
 .testimonial-card {
-    background-color: white;
+    background-color: var(--textoBlanco);
     width: 300px;
     flex-basis: 0 calc(33.33% - 20px);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--textoSombraNegra);
     margin: 10px;
     text-align: center;
     transition: 0.3s;
@@ -584,7 +608,7 @@ width: 0;
     width: 100%;
     flex-direction: column;
     gap: 35px;
-    background: #dddddd;
+    background: var(--fondoGrisClaro);
 }
 
 .inputBox {
@@ -597,11 +621,11 @@ width: 0;
     padding: 5px;
     outline: none;
     border: none;
-    color: #000000;
+    color: var(--bordeNegro);
     font-size: 1em;
     background: transparent;
-    border-left: 3px solid #000000;
-    border-bottom: 3px solid #010101;
+    border-left: 3px solid var(--bordeNegro);
+    border-bottom: 3px solid var(--bordeNegro);
     transition: 0.1s;
 }
 
@@ -617,7 +641,7 @@ width: 0;
     margin-left: 5px;
     pointer-events: none;
     font-size: 12px;
-    color: #000000;
+    color: var(--bordeNegro);
     
     transition: 0.3s;
     text-transform: uppercase;
@@ -631,7 +655,7 @@ width: 0;
     transform: translateX(10px) translateY(-23px);
     font-size: 0.8em;
     letter-spacing: 0.2em;
-    color: #000000;
+    color: var(--bordeNegro);
     border: 2px;
 }
 
@@ -639,13 +663,13 @@ width: 0;
 .inputBox input:focus,
 .inputBox textarea:valid,
 .inputBox textarea:focus {
-    border: 3px solid #000000;
+    border: 3px solid var(--bordeNegro);
 }
 
 .enter {
     height: 45px;
     width: 100px;
-    border: 3px solid #000000;
+    border: 3px solid var(--bordeNegro);
     cursor: pointer;
     background-color: transparent;
     transition: 0.5s;
@@ -655,12 +679,12 @@ width: 0;
     margin-bottom: 1em;
     font-family: Montserrat;
     font-weight: 700;
-    color: #000000;
+    color: var(--bordeNegro);
 }
 
 .enter:hover {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+    background-color: var(--bordeNegro);;
+    color: var(--textoBlanco);
 }
 
 
@@ -668,8 +692,8 @@ width: 0;
 
 
 footer{
-    background-color: #333;
-    color: white;
+    background-color: var(--headerfoot);
+    color: var(--textoBlanco);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -681,7 +705,7 @@ footer{
 .footer-socialMedia i{
     font-size: 2rem;
     margin: 0px 10px;
-    color: white;
+    color: var(--textoBlanco);
 }
 
 .social-media-icon{
@@ -710,7 +734,7 @@ footer{
     }
   
     .menu-hamburguesa li:hover{
-      background-color: #000000;
+      background-color: var(--bordeNegro);
   transition: 1s;
     }
   
